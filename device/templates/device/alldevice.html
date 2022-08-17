@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        #one{
+            padding: 3rem;
+        }
+        #hone{
+            margin: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 id="hone">device details</h1>
+    <div id="one">
+    <table>
+        <thead>
+            <tr>
+                <th>device id</th>
+                <th>device mac</th>
+                <th>latitude</th>
+                <th>longitude</th>
+            </tr>
+        </thead>
+        {% for dev in device %}
+        <tbody>
+            <tr>
+                <td>{{ dev.device_id }}</td>
+                <td>{{ dev.device_mac }}</td>
+                <td>{{ dev.device_lat }}</td>
+                <td>{{ dev.device_long }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+
+</html>
